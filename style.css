@@ -1,8 +1,9 @@
 
-body { font-family: Arial, sans-serif; direction: rtl; background: #f4f4f4; text-align: center; }
-header { padding: 20px; background: #fff; }
-button { margin: 5px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
-#progress-container { width: 80%; background: #ddd; height: 20px; margin: 10px auto; }
-#progress-bar { height: 100%; width: 0%; background: #4caf50; }
-#word-display { font-size: 24px; margin: 20px 0; }
-#feedback { font-size: 20px; margin-top: 10px; color: red; }
+body { font-family: Arial, sans-serif; text-align: center; direction: rtl; background: #f9f9f9; }
+button { margin: 5px; padding: 8px 12px; cursor: pointer; border-radius: 5px; border: 1px solid #666; }
+button:hover { background: #ddd; }
+table.word-table { margin: auto; border-collapse: collapse; }
+table.word-table, th, td { border: 1px solid black; padding: 5px; }
+.columns { display: flex; justify-content: center; gap: 100px; margin-top: 20px; }
+.word { padding: 5px; margin: 5px; background: #eee; cursor: pointer; border-radius: 3px; text-align: center; }
+.word:hover { background: #ccc; }
