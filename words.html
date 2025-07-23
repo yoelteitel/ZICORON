@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קובץ המילים</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="words.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>קובץ המילים</h1>
+    </header>
+    <main>
+        <div id="word-list"></div>
+        <button onclick="location.href='index.html'">חזור לדף הבית</button>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const list = document.getElementById('word-list');
+            allGroups.forEach((group, i) => {
+                const div = document.createElement('div');
+                div.innerHTML = `<h3>קבוצה ${i+1} <button onclick="openGroup(${i})">למד קבוצה זו</button></h3>` +
+                                group.map(w => `<p>${w.he} – ${w.en}</p>`).join('');
+                list.appendChild(div);
+            });
+        });
+        function openGroup(index) {
+            localStorage.setItem('lastGroup', index);
+            location.href = 'lesson.html?start=' + index;
+        }
+    </script>
+</body>
+</html>

@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>שפה ברורה – תרגול דיבור</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שפה ברורה – דף הבית</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>שפה ברורה – תרגול דיבור</h1>
-    <p>בחר את סוג התרגול:</p>
-    <button onclick="startPractice(4)">תרגול 4 מילים</button>
-    <button onclick="startPractice(6)">תרגול 6 מילים</button>
-  </header>
-  <script>
-    function startPractice(count) {
-      localStorage.setItem('practiceCount', count);
-      window.location.href = 'speech_practice.html';
-    }
-  </script>
+    <header>
+        <h1>שפה ברורה – 2000 מילים</h1>
+    </header>
+    <main>
+        <button onclick="location.href='lesson.html?start=0'">התחל מהתחלה</button>
+        <button onclick="continueLast()">המשך מהמקום האחרון</button>
+        <button onclick="location.href='words.html'">קובץ מילים</button>
+        <button onclick="location.href='explanation.html'">הסבר השיטה</button>
+    </main>
+    <script>
+        function continueLast() {
+            const last = localStorage.getItem('lastGroup') || 0;
+            location.href = 'lesson.html?start=' + last;
+        }
+    </script>
 </body>
 </html>
